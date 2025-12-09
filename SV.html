@@ -218,37 +218,65 @@
         }
 
         .seccion-toggle {
-            background: linear-gradient(135deg, #ff8c00 0%, #e67e00 100%);
-            color: white;
-            padding: 20px 30px;
+            background: none;
             border: none;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            font-weight: 900;
+            padding: 0;
             cursor: pointer;
             width: 100%;
-            text-align: left;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-bottom: 20px;
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .seccion-toggle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: brightness(1);
+        }
+
+        .seccion-toggle:hover img {
+            filter: brightness(0.85);
+            transform: scale(1.05);
+        }
+
+        .seccion-toggle.active img {
+            transform: scale(1.1) translateY(-20px);
+            filter: brightness(0.7);
+        }
+
+        .toggle-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.95) 0%, rgba(230, 126, 0, 0.95) 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 900;
             letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            gap: 10px;
         }
 
-        .seccion-toggle:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(255, 140, 0, 0.65);
-        }
-
-        .seccion-toggle.active {
-            border-radius: 12px 12px 0 0;
+        .seccion-toggle.active .toggle-text {
+            background: linear-gradient(135deg, rgba(100, 100, 100, 0.95) 0%, rgba(80, 80, 80, 0.95) 100%);
         }
 
         .toggle-icon {
             font-size: 1.5rem;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .seccion-toggle.active .toggle-icon {
@@ -457,8 +485,11 @@
                 <!-- Formato Estructura De Cargo -->
                 <div class="seccion-grupo">
                     <button class="seccion-toggle" onclick="toggleSeccion(this)">
-                        <span>Formato Estructura De Cargo</span>
-                        <span class="toggle-icon">▼</span>
+                        <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-04.jpg" alt="Formato Estructura De Cargo">
+                        <span class="toggle-text">
+                            <span>Formato Estructura De Cargo</span>
+                            <span class="toggle-icon">▼</span>
+                        </span>
                     </button>
                     <div class="seccion-content">
                         <div class="servicios-grid">
@@ -493,8 +524,11 @@
                 <!-- Preseleccionar Candidatos -->
                 <div class="seccion-grupo">
                     <button class="seccion-toggle" onclick="toggleSeccion(this)">
-                        <span>Preseleccionar Candidatos</span>
-                        <span class="toggle-icon">▼</span>
+                        <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Estructuras4.jpg" alt="Preseleccionar Candidatos">
+                        <span class="toggle-text">
+                            <span>Preseleccionar Candidatos</span>
+                            <span class="toggle-icon">▼</span>
+                        </span>
                     </button>
                     <div class="seccion-content">
                         <div class="servicios-grid">
@@ -553,8 +587,11 @@
                 <!-- Seleccionar Candidatos -->
                 <div class="seccion-grupo">
                     <button class="seccion-toggle" onclick="toggleSeccion(this)">
-                        <span>Seleccionar Candidatos</span>
-                        <span class="toggle-icon">▼</span>
+                        <img src="https://comsandblasting.com/wp-content/uploads/2022/06/GasOil2.jpg" alt="Seleccionar Candidatos">
+                        <span class="toggle-text">
+                            <span>Seleccionar Candidatos</span>
+                            <span class="toggle-icon">▼</span>
+                        </span>
                     </button>
                     <div class="seccion-content">
                         <div class="servicios-grid">
@@ -606,8 +643,11 @@
                 <!-- Vinculación Laboral -->
                 <div class="seccion-grupo">
                     <button class="seccion-toggle" onclick="toggleSeccion(this)">
-                        <span>Vinculación Laboral</span>
-                        <span class="toggle-icon">▼</span>
+                        <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Vehiculos4.jpg" alt="Vinculación Laboral">
+                        <span class="toggle-text">
+                            <span>Vinculación Laboral</span>
+                            <span class="toggle-icon">▼</span>
+                        </span>
                     </button>
                     <div class="seccion-content">
                         <div class="servicios-grid">
