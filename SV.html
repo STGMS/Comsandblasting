@@ -230,6 +230,8 @@
             height: 300px;
             overflow: hidden;
             border-radius: 15px;
+            text-decoration: none;
+            display: block;
         }
 
         .seccion-toggle img {
@@ -246,11 +248,6 @@
             transform: scale(1.05);
         }
 
-        .seccion-toggle.active img {
-            transform: scale(1.1) translateY(-20px);
-            filter: brightness(0.7);
-        }
-
         .toggle-text {
             position: absolute;
             bottom: 0;
@@ -265,136 +262,13 @@
             letter-spacing: 1px;
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             gap: 10px;
         }
 
-        .seccion-toggle.active .toggle-text {
-            background: linear-gradient(135deg, rgba(100, 100, 100, 0.95) 0%, rgba(80, 80, 80, 0.95) 100%);
-        }
-
-        .toggle-icon {
-            font-size: 1.5rem;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .seccion-toggle.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .seccion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            background: white;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-
-        .seccion-content.active {
-            max-height: 3000px;
-            padding: 40px;
-        }
-
-        .servicios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .servicio-box {
-            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border-top: 6px solid #ff8c00;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .servicio-box:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(255, 140, 0, 0.25);
-        }
-
-        .servicio-icon {
-            width: 100%;
-            height: 220px;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
-            overflow: hidden;
-        }
-
-        .servicio-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .servicio-box:hover .servicio-icon img {
-            transform: scale(1.08);
-        }
-
-        .servicio-box h3 {
-            color: #ff8c00;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
-        .servicio-box p {
-            color: #555;
-            margin-bottom: 25px;
-            flex-grow: 1;
-            line-height: 1.8;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #ff8c00 0%, #e67e00 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 800;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
-            letter-spacing: 0.5px;
-        }
-
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.65);
-        }
-
-        .btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-
-        .btn:disabled:hover {
-            transform: none;
-            box-shadow: none;
+        .seccion-toggle:hover .toggle-text {
+            background: linear-gradient(135deg, rgba(230, 110, 0, 0.95) 0%, rgba(210, 100, 0, 0.95) 100%);
         }
 
         footer {
@@ -439,13 +313,13 @@
                 font-size: 2.5rem;
             }
             
-            .seccion-toggle {
+            .toggle-text {
                 font-size: 1.1rem;
                 padding: 15px 20px;
             }
 
-            .servicio-box {
-                padding: 30px 20px;
+            .seccion-toggle {
+                height: 200px;
             }
         }
     </style>
@@ -484,207 +358,42 @@
                 
                 <!-- Formato Estructura De Cargo -->
                 <div class="seccion-grupo">
-                    <button class="seccion-toggle" onclick="toggleSeccion(this)">
+                    <a href="estructura-cargo.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-04.jpg" alt="Formato Estructura De Cargo">
                         <span class="toggle-text">
                             <span>Formato Estructura De Cargo</span>
-                            <span class="toggle-icon">▼</span>
                         </span>
-                    </button>
-                    <div class="seccion-content">
-                        <div class="servicios-grid">
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-04.jpg" alt="Análisis De Cargo">
-                                </div>
-                                <h3>Análisis De Cargo</h3>
-                                <p>Evaluación detallada de los requerimientos y responsabilidades del puesto de trabajo. Este documento incluye el análisis de funciones, responsabilidades clave, relaciones jerárquicas, condiciones de trabajo y requisitos técnicos necesarios para desempeñar exitosamente el cargo en la organización.</p>
-                                <button class="btn" onclick="abrirPDF1()">Descargar</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2019/02/Senalizacion.jpg" alt="Descripción De Cargo">
-                                </div>
-                                <h3>Descripción De Cargo</h3>
-                                <p>Documento que detalla las funciones, actividades y requisitos específicos del cargo. Especifica las tareas diarias, responsabilidades, objetivos y metas del puesto, así como las competencias técnicas y blandas requeridas para su óptimo desempeño.</p>
-                                <button class="btn" onclick="abrirPDF2()">Descargar</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2019/02/alquiler.jpg" alt="Perfil De Cargo">
-                                </div>
-                                <h3>Perfil De Cargo</h3>
-                                <p>Especificación de competencias, habilidades y experiencia requerida para el puesto. Detalla el nivel educativo, años de experiencia, competencias técnicas especializadas, idiomas, certificaciones y habilidades interpersonales necesarias para ocupar exitosamente la posición.</p>
-                                <button class="btn" onclick="abrirPDF3()">Descargar</button>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Preseleccionar Candidatos -->
                 <div class="seccion-grupo">
-                    <button class="seccion-toggle" onclick="toggleSeccion(this)">
+                    <a href="preseleccionar-candidatos.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Estructuras4.jpg" alt="Preseleccionar Candidatos">
                         <span class="toggle-text">
                             <span>Preseleccionar Candidatos</span>
-                            <span class="toggle-icon">▼</span>
                         </span>
-                    </button>
-                    <div class="seccion-content">
-                        <div class="servicios-grid">
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Estructuras4.jpg" alt="Requisición De Personal">
-                                </div>
-                                <h3>Requisición De Personal</h3>
-                                <p>Formato de solicitud oficial para la necesidad de personal en la organización. Documenta el departamento solicitante, justificación de la necesidad, características del cargo, cantidad de vacantes y plazo de cobertura requerido para iniciar el proceso de selección.</p>
-                                <button class="btn" onclick="abrirPDF4()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tanques3.jpg" alt="Recepción De Hojas De Vida">
-                                </div>
-                                <h3>Recepción De Hojas De Vida</h3>
-                                <p>Procedimiento y formatos para la recopilación de documentación de candidatos. Establece los requisitos de documentación, criterios de aceptación, fechas de cierre de convocatoria y mecanismos de organización de candidatos inscritos en el proceso de selección.</p>
-                                <button class="btn" onclick="abrirPDF5()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tuberia4.jpg" alt="Lista Verificación Perfil">
-                                </div>
-                                <h3>Lista Verificación Perfil De Cargo</h3>
-                                <p>Checklist para verificar que los candidatos cumplan con el perfil requerido. Facilita la evaluación objetiva de requisitos mínimos como educación, experiencia, competencias técnicas y especializaciones necesarias para avanzar en el proceso de selección.</p>
-                                <button class="btn" onclick="abrirPDF6()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Vehiculos3.jpg" alt="Entrevista Preliminar">
-                                </div>
-                                <h3>Entrevista Preliminar</h3>
-                                <p>Guía y formato para la primera entrevista de filtrado de candidatos. Proporciona preguntas estructuradas para evaluación inicial, valoración de motivación, disponibilidad, expectativas salariales y compatibilidad con la cultura organizacional.</p>
-                                <button class="btn" onclick="abrirPDF7()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/ecbec7ea23a315b2beaaa7bd54e70571/3-ok.jpg" alt="Reclutamiento Interno">
-                                </div>
-                                <h3>Reclutamiento Interno</h3>
-                                <p>Protocolo para identificar y promover talento disponible dentro de la organización. Establece los procesos, criterios y beneficios para que empleados actuales puedan optar por nuevas posiciones, fomentando el desarrollo profesional interno y la retención del talento.</p>
-                                <button class="btn" onclick="abrirPDF11()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/3276bb2fe3eb4e904119fa18f8891ef6/5-ok.jpg" alt="Reclutamiento Externo">
-                                </div>
-                                <h3>Reclutamiento Externo</h3>
-                                <p>Estrategia para atraer candidatos calificados del mercado laboral externo. Define canales de difusión, plataformas de publicación, criterios de publicidad de vacantes y metodologías para alcanzar el mayor número de candidatos potencialmente idóneos.</p>
-                                <button class="btn" onclick="abrirPDF12()">Ver Documento</button>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Seleccionar Candidatos -->
                 <div class="seccion-grupo">
-                    <button class="seccion-toggle" onclick="toggleSeccion(this)">
+                    <a href="seleccionar-candidatos.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2022/06/GasOil2.jpg" alt="Seleccionar Candidatos">
                         <span class="toggle-text">
                             <span>Seleccionar Candidatos</span>
-                            <span class="toggle-icon">▼</span>
                         </span>
-                    </button>
-                    <div class="seccion-content">
-                        <div class="servicios-grid">
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/GasOil2.jpg" alt="Entrevista por Competencias">
-                                </div>
-                                <h3>Formato De Entrevista Por Competencias</h3>
-                                <p>Formato de entrevista formal para evaluación profunda de candidatos seleccionados. Incluye preguntas conductuales para evaluar competencias clave, ejemplos de situaciones previas, capacidad de resolución de problemas y alineación con valores organizacionales.</p>
-                                <button class="btn" onclick="abrirPDF8()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Electro1.jpg" alt="Decisión De La Selección">
-                                </div>
-                                <h3>Decisión De La Selección</h3>
-                                <p>Documento de resolución final y resultado del proceso de selección. Consolida la evaluación de todos los candidatos finalistas, documentación de puntajes, criterios de decisión, recomendación de candidato ganador y comunicación de resultados a participantes.</p>
-                                <button class="btn" onclick="abrirPDF9()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tanques1.jpg" alt="Pruebas Psicotécnicas">
-                                </div>
-                                <h3>Pruebas Psicotécnicas</h3>
-                                <p>Evaluaciones psicológicas y técnicas para medir aptitudes, personalidad y competencias cognitivas. Incluye tests de personalidad, razonamiento lógico, pruebas técnicas específicas del cargo y valoración de estabilidad emocional para garantizar idoneidad del candidato.</p>
-                                <button class="btn" onclick="abrirPDF13()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tanques2.jpg" alt="Visita Domiciliaria">
-                                </div>
-                                <h3>Visita Domiciliaria</h3>
-                                <p>Protocolo de verificación en ambiente del candidato para evaluar referencias sociales. Valida información proporcionada, verifica referencias personales, evalúa conducta comunitaria y proporciona datos adicionales para decisión final de contratación.</p>
-                                <button class="btn" onclick="abrirPDF14()">Formulario 1</button>
-                                <button class="btn" onclick="abrirPDF19()" style="margin-top: 8px;">Formulario 2</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/46d35ccfc12e4380693d1ac39f9759da/4-ok.jpg" alt="Exámenes Médicos">
-                                </div>
-                                <h3>Exámenes Médicos</h3>
-                                <p>Evaluación médica ocupacional para verificar aptitud física y de salud. Incluye examen médico general, pruebas específicas según ocupación, análisis de capacidades físicas requeridas y generación de certificado de aptitud laboral.</p>
-                                <button class="btn" onclick="abrirPDF15()">Ver Documento</button>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <!-- Vinculación Laboral -->
                 <div class="seccion-grupo">
-                    <button class="seccion-toggle" onclick="toggleSeccion(this)">
+                    <a href="vinculacion-laboral.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Vehiculos4.jpg" alt="Vinculación Laboral">
                         <span class="toggle-text">
                             <span>Vinculación Laboral</span>
-                            <span class="toggle-icon">▼</span>
                         </span>
-                    </button>
-                    <div class="seccion-content">
-                        <div class="servicios-grid">
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Vehiculos4.jpg" alt="Documentos Para Contratación">
-                                </div>
-                                <h3>Documentos Para Contratación</h3>
-                                <p>Lista completa de documentos y requisitos necesarios para formalizar la contratación. Incluye requisitos legales como cédula, certificados educativos, referencias laborales, historia laboral, documentación bancaria y cumplimiento de verificaciones de seguridad.</p>
-                                <button class="btn" onclick="abrirPDF10()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tuberia5.jpg" alt="Contratos">
-                                </div>
-                                <h3>Contratos</h3>
-                                <p>Documentos legales de formalización de la relación laboral con el nuevo empleado. Incluye contrato a término indefinido, a plazo fijo, contrato por obra o labor, cláusulas de confidencialidad y acuerdos específicos según naturaleza del cargo.</p>
-                                <button class="btn" onclick="abrirPDF16()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tuberia3.jpg" alt="Seguridad Social">
-                                </div>
-                                <h3>Seguridad Social Integral</h3>
-                                <p>Documentación y procedimientos para afiliación obligatoria a sistemas de seguridad social. Incluye afiliación a pensión, salud, riesgos laborales, registro en cajas de compensación familiar y cumplimiento de obligaciones patronales.</p>
-                                <button class="btn" onclick="abrirPDF17()">Ver Documento</button>
-                            </div>
-                            <div class="servicio-box">
-                                <div class="servicio-icon">
-                                    <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-05-1024x768.jpg" alt="Reglamento">
-                                </div>
-                                <h3>Reglamento Interno De Trabajo</h3>
-                                <p>Normas y regulaciones que rigen las relaciones laborales en la organización. Define derechos y deberes de empleados, políticas de conducta, procedimientos disciplinarios, beneficios, horarios de trabajo y protocolos de seguridad e higiene ocupacional.</p>
-                                <button class="btn" onclick="abrirPDF18()">Ver Documento</button>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
@@ -708,70 +417,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        function toggleSeccion(button) {
-            button.classList.toggle('active');
-            const content = button.nextElementSibling;
-            content.classList.toggle('active');
-        }
-        
-        function abrirPDF1() {
-            window.open("https://drive.google.com/file/d/14j7JkvBISOVqxfzzUQeaD0KvNWOtFqnn/view?usp=sharing", '_blank');
-        }
-        function abrirPDF2() {
-            window.open("https://drive.google.com/file/d/1h3bwGPQWZXDEJdr0h6wd2UTpA3sRn8Ms/view?usp=sharing", '_blank');
-        }
-        function abrirPDF3() {
-            window.open("https://drive.google.com/file/d/1n72uh39tPc0NI2p6XF1eVDauMsPFyKwg/view?usp=sharing", '_blank');
-        }
-        function abrirPDF4() {
-            window.open("https://drive.google.com/file/d/1X6BEYwCDGh6nV4uK4No0qF0I3m4qe6d3/view?usp=sharing", '_blank');
-        }
-        function abrirPDF5() {
-            window.open("https://docs.google.com/spreadsheets/d/1KG6s3pkvUS0tZICs6wnxJUB4ACGeS4wy/edit?usp=sharing&ouid=106125609418372213455&rtpof=true&sd=true", '_blank');
-        }
-        function abrirPDF6() {
-            window.open("https://drive.google.com/file/d/1F7loTYW8TahrXVz88iFycHQkPEd2yxgh/view?usp=sharing", '_blank');
-        }
-        function abrirPDF7() {
-            window.open("https://drive.google.com/file/d/1MR9c8pZYsxCoWMebWEA0HhlQh4vGF_F2/view?usp=sharing", '_blank');
-        }
-        function abrirPDF8() {
-            window.open("https://drive.google.com/file/d/1GhQj1LcMW5zpx8ZjWjJ9JxU0w6tf7hT8/view?usp=sharing", '_blank');
-        }
-        function abrirPDF9() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF10() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF11() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF12() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF13() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF14() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF15() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF16() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF17() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF18() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
-        function abrirPDF19() {
-            alert('Documento en construcción. Por favor, contacta con nosotros');
-        }
     </script>
 </body>
 </html>
