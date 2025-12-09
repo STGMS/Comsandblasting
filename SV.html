@@ -215,6 +215,9 @@
         .seccion-grupo {
             margin-bottom: 60px;
             animation: slideUp 0.8s ease-out;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
         .seccion-toggle {
@@ -321,6 +324,10 @@
             .seccion-toggle {
                 height: 200px;
             }
+
+            .seccion-grupo {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -358,7 +365,7 @@
                 
                 <!-- Formato Estructura De Cargo -->
                 <div class="seccion-grupo">
-                    <a href="estructuraCargo.html" class="seccion-toggle">
+                    <a href="estructuracargo.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-04.jpg" alt="Formato Estructura De Cargo">
                         <span class="toggle-text">
                             <span>Formato Estructura De Cargo</span>
@@ -368,7 +375,7 @@
 
                 <!-- Preseleccionar Candidatos -->
                 <div class="seccion-grupo">
-                    <a href="preselecionarCandidatos.html" class="seccion-toggle">
+                    <a href="preseleccionarCandidatos.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Estructuras4.jpg" alt="Preseleccionar Candidatos">
                         <span class="toggle-text">
                             <span>Preseleccionar Candidatos</span>
@@ -420,4 +427,3 @@
     </script>
 </body>
 </html>
-
