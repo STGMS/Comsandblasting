@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas Psicotécnicas - Comsandblasting.Ltda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+        
+        header {
+            background: linear-gradient(135deg, rgba(112, 112, 112, 0.72) 0%, rgba(90, 90, 90, 0.72) 100%);
+            color: white;
+            padding: 0.8rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+            padding: 0.5rem 0;
+            background: linear-gradient(135deg, rgba(112, 112, 112, 0.95) 0%, rgba(90, 90, 90, 0.95) 100%);
+            border-bottom: 2px solid rgba(255, 140, 0, 0.5);
+        }
+
+        .logo img {
+            height: 50px;
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff8c00;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo a {
+            color: #ff8c00;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 700;
+            position: relative;
+            padding: 8px 0;
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            color: #ff8c00;
+            transform: translateY(-4px);
+        }
+        
+        main {
+            margin-top: 60px;
+        }
+        
+        .page-title {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(255, 140, 0, 0.2) 100%), url('https://comsandblasting.com/wp-content/uploads/2022/06/Tanques1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .breadcrumb {
+            padding: 15px 20px;
+            background: #f5f5f5;
+            border-bottom: 2px solid #ff8c00;
+        }
+
+        .breadcrumb a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+            color: #e67e00;
+        }
+        
+        .content-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #fafafa 0%, #ffffff 50%, #f5f5f5 100%);
+        }
+
+        .intro-box {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 15px;
+            border-left: 6px solid #ff8c00;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .intro-box h2 {
+            color: #ff8c00;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .intro-box p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .intro-box ul {
+            margin-left: 20px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .intro-box li {
+            margin-bottom: 12px;
+            list-style-type: disc;
+            color: #ff8c00;
+        }
+
+        .intro-box li::marker {
+            color: #ff8c00;
+        }
+
+        .intro-box li span {
+            color: #555;
+        }
+
+        .pruebas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .prueba-box {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border-top: 6px solid #ff8c00;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .prueba-box:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(255, 140, 0, 0.25);
+        }
+
+        .prueba-icon {
+            width: 100%;
+            height: 180px;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(255, 215, 0, 0.08) 100%);
+            overflow: hidden;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ff8c00;
+        }
+
+        .prueba-box h3 {
+            color: #ff8c00;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 900;
+        }
+
+        .prueba-box p {
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff8c00 0%, #e67e00 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.65);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: linear-gradient(135deg, #707070 0%, #5a5a5a 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            margin: 15px 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        footer a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .prueba-box {
+                padding: 30px 20px;
+            }
+
+            .intro-box {
+                padding: 30px 20px;
+            }
+
+            .intro-box h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://comsandblasting.com/wp-content/uploads/2017/08/Logo-web.png" alt="Comsandblasting.Ltda">
+                        Comsandblasting.Ltda
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="SV.html">Selección y Vinculación</a></li>
+                        <li><a href="form.html">Servicio al Cliente</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title">
+            <div class="container">
+                <h1>Pruebas Psicotécnicas</h1>
+            </div>
+        </section>
+
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="seleccionar-candidatos.html">← Volver a Seleccionar Candidatos</a>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="intro-box">
+                    <h2>¿Qué son las Pruebas Psicotécnicas?</h2>
+                    <p>Las pruebas psicotécnicas son exámenes estandarizados y cientificamente validados que miden múltiples dimensiones de las personas. Estas evaluaciones son herramientas esenciales en procesos de selección, permitiendo obtener información objetiva sobre el potencial y la idoneidad de los candidatos.</p>
+                    
+                    <h2 style="color: #ff8c00; font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px;">Componentes Evaluados:</h2>
+                    <ul>
+                        <li><span><strong>Capacidades Cognitivas:</strong> Razonamiento lógico, análisis, resolución de problemas y pensamiento crítico</span></li>
+                        <li><span><strong>Aptitudes Técnicas:</strong> Habilidades específicas requeridas para el cargo, incluyendo conocimientos técnicos y prácticos</span></li>
+                        <li><span><strong>Rasgos de Personalidad:</strong> Estilos de trabajo, preferencias interpersonales, liderazgo y adaptabilidad</span></li>
+                        <li><span><strong>Estabilidad Emocional:</strong> Gestión del estrés, resiliencia y equilibrio emocional en el trabajo</span></li>
+                        <li><span><strong>Competencias Conductuales:</strong> Comunicación, trabajo en equipo, iniciativa y orientación a resultados</span></li>
+                    </ul>
+
+                    <p style="margin-top: 25px;"><strong style="color: #ff8c00;">Importancia en el Proceso de Selección:</strong> Un buen desempeño en estas pruebas sugiere que el candidato reúne los requisitos técnicos y de aptitud para ejecutarse eficazmente en el puesto. Deficiencias en la prueba pueden alertar sobre posibles necesidades de formación adicional o incluso reconsideración de su idoneidad para la posición.</p>
+                </div>
+
+                <div class="pruebas-grid">
+                    <div class="prueba-box">
+                        <div class="prueba-icon">🧠</div>
+                        <h3>Tests de Razonamiento</h3>
+                        <p>Evaluación de habilidades de razonamiento lógico, análisis numérico, reconocimiento de patrones y pensamiento abstracto. Estos tests miden la capacidad del candidato para resolver problemas complejos y tomar decisiones analíticas.</p>
+                        <button class="btn" onclick="abrirContenido('razonamiento')">Ver Detalles</button>
+                    </div>
+
+                    <div class="prueba-box">
+                        <div class="prueba-icon">👤</div>
+                        <h3>Evaluación Personalidad</h3>
+                        <p>Instrumentos diseñados para medir rasgos de personalidad, estilos de comportamiento, motivaciones y preferencias del candidato. Incluye tests de temperamento, valores y orientación profesional.</p>
+                        <button class="btn" onclick="abrirContenido('personalidad')">Ver Detalles</button>
+                    </div>
+
+                    <div class="prueba-box">
+                        <div class="prueba-icon">📋</div>
+                        <h3>Pruebas Técnicas</h3>
+                        <p>Evaluaciones específicas para medir competencias técnicas, conocimientos especializados y habilidades prácticas requeridas para el cargo. Adaptadas a la naturaleza del puesto a ocupar.</p>
+                        <button class="btn" onclick="abrirContenido('tecnicas')">Ver Detalles</button>
+                    </div>
+
+                    <div class="prueba-box">
+                        <div class="prueba-icon">👁️</div>
+                        <h3>Test Atención y Percepción</h3>
+                        <p>Medición de capacidades de concentración, atención visual, discriminación perceptual y velocidad de procesamiento. Especialmente importante para cargos que requieren alta precisión y concentración.</p>
+                        <button class="btn" onclick="abrirContenido('atencion')">Ver Detalles</button>
+                    </div>
+
+                    <div class="prueba-box">
+                        <div class="prueba-icon">💼</div>
+                        <h3>Test de Competencias</h3>
+                        <p>Evaluación de competencias comportamentales y laborales como liderazgo, trabajo en equipo, comunicación, gestión de cambio, orientación a resultados e iniciativa emprendedora.</p>
+                        <button class="btn" onclick="abrirContenido('competencias')">Ver Detalles</button>
+                    </div>
+
+                    <div class="prueba-box">
+                        <div class="prueba-icon">📊</div>
+                        <h3>Inteligencia Emocional</h3>
+                        <p>Medición de la capacidad para reconocer, entender y gestionar emociones propias y ajenas. Evalúa empatía, autocontrol, motivación y habilidades interpersonales fundamentales para el desempeño laboral.</p>
+                        <button class="btn" onclick="abrirContenido('emocional')">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Comsandblasting.Ltda. Todos los derechos reservados.</p>
+            <p>Email: <a href="mailto:comercial@comsandblasting.com">comercial@comsandblasting.com</a> | Teléfono: <a href="tel:+573113695420">+57 (311) 369-542</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        function abrirContenido(tipo) {
+            const detalles = {
+                'razonamiento': 'Test de Razonamiento\n\nEvaluación de habilidades de razonamiento lógico, análisis numérico, reconocimiento de patrones y pensamiento abstracto.\n\nComponentes:\n• Razonamiento Verbal\n• Razonamiento Numérico\n• Razonamiento Espacial\n• Series y Patrones\n\nEste tipo de prueba mide la capacidad analítica e intelectual necesaria para resolver problemas en el entorno laboral.',
+                'personalidad': 'Evaluación de Personalidad\n\nInstrumentos diseñados para medir rasgos de personalidad, estilos de comportamiento, motivaciones y preferencias del candidato.\n\nDimensiones Evaluadas:\n• Extraversión\n• Responsabilidad\n• Estabilidad Emocional\n• Apertura a Experiencias\n• Amabilidad\n\nPermite identificar el ajuste cultural con la organización.',
+                'tecnicas': 'Pruebas Técnicas\n\nEvaluaciones específicas adaptadas al cargo que miden competencias técnicas y conocimientos especializados.\n\nCaracterísticas:\n• Diseñadas para cada posición\n• Basadas en requisitos del cargo\n• Miden habilidades prácticas\n• Evalúan conocimientos especializados\n\nSon fundamentales para asegurar que el candidato tiene los conocimientos técnicos necesarios.',
+                'atencion': 'Test de Atención y Percepción\n\nMedición de capacidades de concentración, atención visual, discriminación perceptual y velocidad de procesamiento.\n\nÁreas Evaluadas:\n• Atención Sostenida\n• Atención Selectiva\n• Percepción Visual\n• Velocidad de Procesamiento\n• Conteo y Discriminación\n\nEspecialmente importante para cargos industriales y de precisión.',
+                'competencias': 'Test de Competencias\n\nEvaluación de competencias comportamentales y laborales necesarias para el desempeño.\n\nCompetencias Medidas:\n• Liderazgo\n• Trabajo en Equipo\n• Comunicación Efectiva\n• Gestión del Cambio\n• Orientación a Resultados\n• Iniciativa y Autonomía\n\nDefinen el potencial del candidato para crecer en la organización.',
+                'emocional': 'Inteligencia Emocional\n\nMedición de la capacidad para reconocer, entender y gestionar emociones propias y ajenas.\n\nComponentes:\n• Autoconciencia\n• Autorregulación\n• Empatía\n• Motivación\n• Habilidades Sociales\n\nFundamental para el bienestar laboral y las relaciones interpersonales en la empresa.'
+            };
+
+            alert(detalles[tipo]);
+        }
+    </script>
+</body>
+</html>
