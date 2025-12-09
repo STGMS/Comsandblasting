@@ -212,12 +212,29 @@
             box-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
         }
 
-        .seccion-grupo {
-            margin-bottom: 60px;
-            animation: slideUp 0.8s ease-out;
+        .secciones-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+        }
+
+        .seccion-grupo {
+            margin-bottom: 0;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .seccion-grupo:nth-child(odd) {
+            grid-column: span 1;
+        }
+
+        .seccion-grupo:nth-child(even) {
+            grid-column: span 1;
+        }
+
+        @media (max-width: 1200px) {
+            .secciones-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .seccion-toggle {
@@ -324,10 +341,6 @@
             .seccion-toggle {
                 height: 200px;
             }
-
-            .seccion-grupo {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -362,10 +375,11 @@
 
         <section class="servicios-section">
             <div class="container">
+                <div class="secciones-container">
                 
                 <!-- Formato Estructura De Cargo -->
                 <div class="seccion-grupo">
-                    <a href="estructuracargo.html" class="seccion-toggle">
+                    <a href="estructuraCargo.html" class="seccion-toggle">
                         <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-04.jpg" alt="Formato Estructura De Cargo">
                         <span class="toggle-text">
                             <span>Formato Estructura De Cargo</span>
@@ -403,6 +417,7 @@
                     </a>
                 </div>
 
+                </div>
             </div>
         </section>
     </main>
