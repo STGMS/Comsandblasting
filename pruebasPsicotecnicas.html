@@ -422,28 +422,7 @@
     </footer>
 
     <script>
-        const header = document.getElementById('header');
         
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        function abrirContenido(tipo) {
-            const detalles = {
-                'razonamiento': 'Test de Razonamiento\n\nEvaluación de habilidades de razonamiento lógico, análisis numérico, reconocimiento de patrones y pensamiento abstracto.\n\nComponentes:\n• Razonamiento Verbal\n• Razonamiento Numérico\n• Razonamiento Espacial\n• Series y Patrones\n\nEste tipo de prueba mide la capacidad analítica e intelectual necesaria para resolver problemas en el entorno laboral.',
-                'personalidad': 'Evaluación de Personalidad\n\nInstrumentos diseñados para medir rasgos de personalidad, estilos de comportamiento, motivaciones y preferencias del candidato.\n\nDimensiones Evaluadas:\n• Extraversión\n• Responsabilidad\n• Estabilidad Emocional\n• Apertura a Experiencias\n• Amabilidad\n\nPermite identificar el ajuste cultural con la organización.',
-                'tecnicas': 'Pruebas Técnicas\n\nEvaluaciones específicas adaptadas al cargo que miden competencias técnicas y conocimientos especializados.\n\nCaracterísticas:\n• Diseñadas para cada posición\n• Basadas en requisitos del cargo\n• Miden habilidades prácticas\n• Evalúan conocimientos especializados\n\nSon fundamentales para asegurar que el candidato tiene los conocimientos técnicos necesarios.',
-                'atencion': 'Test de Atención y Percepción\n\nMedición de capacidades de concentración, atención visual, discriminación perceptual y velocidad de procesamiento.\n\nÁreas Evaluadas:\n• Atención Sostenida\n• Atención Selectiva\n• Percepción Visual\n• Velocidad de Procesamiento\n• Conteo y Discriminación\n\nEspecialmente importante para cargos industriales y de precisión.',
-                'competencias': 'Test de Competencias\n\nEvaluación de competencias comportamentales y laborales necesarias para el desempeño.\n\nCompetencias Medidas:\n• Liderazgo\n• Trabajo en Equipo\n• Comunicación Efectiva\n• Gestión del Cambio\n• Orientación a Resultados\n• Iniciativa y Autonomía\n\nDefinen el potencial del candidato para crecer en la organización.',
-                'emocional': 'Inteligencia Emocional\n\nMedición de la capacidad para reconocer, entender y gestionar emociones propias y ajenas.\n\nComponentes:\n• Autoconciencia\n• Autorregulación\n• Empatía\n• Motivación\n• Habilidades Sociales\n\nFundamental para el bienestar laboral y las relaciones interpersonales en la empresa.'
-            };
-
-            alert(detalles[tipo]);
-        }
 
 
 
