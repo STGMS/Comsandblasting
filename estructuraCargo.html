@@ -180,23 +180,23 @@
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 60px;
             margin-bottom: 60px;
         }
 
         .servicio-box {
             background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 40px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border-top: 6px solid #ff8c00;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
             animation: slideUp 0.8s ease-out;
         }
 
@@ -207,14 +207,14 @@
 
         .servicio-icon {
             width: 100%;
-            height: 220px;
-            margin: 0 auto 25px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
             background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
             overflow: hidden;
+            order: -1;
         }
 
         .servicio-icon img {
@@ -229,19 +229,27 @@
             transform: scale(1.08);
         }
 
+        .servicio-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
         .servicio-box h3 {
             color: #ff8c00;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
             font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .servicio-box p {
             color: #555;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             flex-grow: 1;
-            line-height: 1.8;
-            font-size: 0.95rem;
+            line-height: 1.9;
+            font-size: 1rem;
             font-weight: 500;
         }
 
@@ -259,6 +267,7 @@
             font-weight: 800;
             text-align: center;
             box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+            width: fit-content;
         }
 
         .btn:hover {
@@ -314,6 +323,14 @@
             }
             
             .servicio-box {
+                grid-template-columns: 1fr;
+            }
+
+            .servicio-icon {
+                height: 250px;
+            }
+
+            .servicio-content {
                 padding: 30px 20px;
             }
 
@@ -383,27 +400,33 @@
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-04.jpg" alt="Análisis De Cargo">
                         </div>
-                        <h3>Análisis De Cargo</h3>
-                        <p>Evaluación detallada de los requerimientos y responsabilidades del puesto de trabajo. Este documento incluye el análisis de funciones, responsabilidades clave, relaciones jerárquicas, condiciones de trabajo y requisitos técnicos necesarios para desempeñar exitosamente el cargo en la organización. Proporciona una base sólida para la descripción del puesto y la determinación del perfil ideal del candidato.</p>
-                        <button class="btn" onclick="abrirPDF1()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Análisis De Cargo</h3>
+                            <p>Evaluación detallada de los requerimientos y responsabilidades del puesto de trabajo. Este documento incluye el análisis de funciones, responsabilidades clave, relaciones jerárquicas, condiciones de trabajo y requisitos técnicos necesarios para desempeñar exitosamente el cargo en la organización. Proporciona una base sólida para la descripción del puesto y la determinación del perfil ideal del candidato.</p>
+                            <button class="btn" onclick="abrirPDF1()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2019/02/Senalizacion.jpg" alt="Descripción De Cargo">
                         </div>
-                        <h3>Descripción De Cargo</h3>
-                        <p>Documento que detalla las funciones, actividades y requisitos específicos del cargo. Especifica las tareas diarias, responsabilidades, objetivos y metas del puesto, así como las competencias técnicas y blandas requeridas para su óptimo desempeño. Sirve como referencia para evaluación de desempeño, capacitación y promoción del personal.</p>
-                        <button class="btn" onclick="abrirPDF2()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Descripción De Cargo</h3>
+                            <p>Documento que detalla las funciones, actividades y requisitos específicos del cargo. Especifica las tareas diarias, responsabilidades, objetivos y metas del puesto, así como las competencias técnicas y blandas requeridas para su óptimo desempeño. Sirve como referencia para evaluación de desempeño, capacitación y promoción del personal.</p>
+                            <button class="btn" onclick="abrirPDF2()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2019/02/alquiler.jpg" alt="Perfil De Cargo">
                         </div>
-                        <h3>Perfil De Cargo</h3>
-                        <p>Especificación de competencias, habilidades y experiencia requerida para el puesto. Detalla el nivel educativo, años de experiencia, competencias técnicas especializadas, idiomas, certificaciones y habilidades interpersonales necesarias para ocupar exitosamente la posición. Es el documento clave para preseleccionar candidatos y evaluar su idoneidad.</p>
-                        <button class="btn" onclick="abrirPDF3()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Perfil De Cargo</h3>
+                            <p>Especificación de competencias, habilidades y experiencia requerida para el puesto. Detalla el nivel educativo, años de experiencia, competencias técnicas especializadas, idiomas, certificaciones y habilidades interpersonales necesarias para ocupar exitosamente la posición. Es el documento clave para preseleccionar candidatos y evaluar su idoneidad.</p>
+                            <button class="btn" onclick="abrirPDF3()">Ver Documento</button>
+                        </div>
                     </div>
                 </div>
             </div>
