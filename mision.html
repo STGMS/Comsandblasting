@@ -483,6 +483,15 @@
                 padding: 80px 20px;
             }
         }
+
+        .dropdown-menu {
+            display: none; 
+            position: absolute; 
+        }
+        
+        li:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -498,7 +507,15 @@
                 <nav>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="SV.html">Selección y Vinculación</a></li>
+                        <li>
+                            <a>Selección y Vinculación</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="estructuraCargo.html">Estructura De Cargo</a></li>
+                                <li><a href="preselecionarCandidatos.html">Preseleccionar Candidatos</a></li>
+                                <li><a href="seleccionarCandidatos.html">Seleccionar Candidatos</a></li>
+                                <li><a href="vinculacionLaboral.html">Vinculación Laboral</a></li>
+                            </ul>
+                        </li>
                         <li><a href="form.html">Servicio al Cliente</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
@@ -568,4 +585,5 @@
         });
     </script>
 </body>
+
 </html>
