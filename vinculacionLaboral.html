@@ -140,23 +140,23 @@
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 60px;
             margin-bottom: 60px;
         }
 
         .servicio-box {
             background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 40px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border-top: 6px solid #ff8c00;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
             animation: slideUp 0.8s ease-out;
         }
 
@@ -167,14 +167,14 @@
 
         .servicio-icon {
             width: 100%;
-            height: 220px;
-            margin: 0 auto 25px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
             background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
             overflow: hidden;
+            order: -1;
         }
 
         .servicio-icon img {
@@ -189,19 +189,27 @@
             transform: scale(1.08);
         }
 
+        .servicio-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
         .servicio-box h3 {
             color: #ff8c00;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
             font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .servicio-box p {
             color: #555;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             flex-grow: 1;
-            line-height: 1.8;
-            font-size: 0.95rem;
+            line-height: 1.9;
+            font-size: 1rem;
             font-weight: 500;
         }
 
@@ -219,6 +227,8 @@
             font-weight: 800;
             text-align: center;
             box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+            width: fit-content;
+            margin-top: 10px;
         }
 
         .btn:hover {
@@ -268,6 +278,14 @@
             }
             
             .servicio-box {
+                grid-template-columns: 1fr;
+            }
+
+            .servicio-icon {
+                height: 250px;
+            }
+
+            .servicio-content {
                 padding: 30px 20px;
             }
         }
@@ -332,37 +350,45 @@
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Vehiculos4.jpg" alt="Documentos Para Contratación">
                         </div>
-                        <h3>Documentos Para Contratación</h3>
-                        <p>Lista completa de documentos y requisitos necesarios para formalizar la contratación. Incluye requisitos legales como cédula, certificados educativos, referencias laborales, historia laboral, documentación bancaria y cumplimiento de verificaciones de seguridad. Garantiza que toda la documentación esté completa antes de iniciar labores.</p>
-                        <button class="btn" onclick="abrirPDF10()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Documentos Para Contratación</h3>
+                            <p>Lista completa de documentos y requisitos necesarios para formalizar la contratación. Incluye requisitos legales como cédula, certificados educativos, referencias laborales, historia laboral, documentación bancaria y cumplimiento de verificaciones de seguridad. Garantiza que toda la documentación esté completa antes de iniciar labores.</p>
+                            <button class="btn" onclick="abrirPDF10()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
-                            <img src="https://static.wixstatic.com/media/d18120_7a4959ee65dc4a79af879b76487135b7.png/v1/fill/w_250,h_187,al_c,q_95,enc_auto/d18120_7a4959ee65dc4a79af879b76487135b7.png" alt="Reglamento">
+                            <img src="https://static.wixstatic.com/media/d18120_7a4959ee65dc4a79af879b76487135b7.png/v1/fill/w_250,h_187,al_c,q_95,enc_auto/d18120_7a4959ee65dc4a79af879b76487135b7.png" alt="Contratos">
                         </div>
-                        <h3>Contratos</h3>
-                        <p>Formatos estándar para formalizar la relación laboral (fijo, indefinido, obra, servicios). Establece condiciones de empleo, funciones, remuneración y obligaciones mutuas bajo la normativa legal vigente. Garantiza un marco legal claro y justo.</p>
-                        <button class="btn" onclick="abrirPDF19()">Fijo</button>
-                        <button class="btn" onclick="abrirPDF20()">Indefinido</button>
+                        <div class="servicio-content">
+                            <h3>Contratos</h3>
+                            <p>Formatos estándar para formalizar la relación laboral (fijo, indefinido, obra, servicios). Establece condiciones de empleo, funciones, remuneración y obligaciones mutuas bajo la normativa legal vigente. Garantiza un marco legal claro y justo.</p>
+                            <button class="btn" onclick="abrirPDF19()">Fijo</button>
+                            <button class="btn" onclick="abrirPDF20()">Indefinido</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tuberia3.jpg" alt="Seguridad Social">
                         </div>
-                        <h3>Seguridad Social Integral</h3>
-                        <p>Documentación y procedimientos para afiliación obligatoria a sistemas de seguridad social. Incluye afiliación a pensión, salud, riesgos laborales, registro en cajas de compensación familiar y cumplimiento de obligaciones patronales. Asegura cobertura completa de protección social del empleado.</p>
-                        <button class="btn" onclick="abrirPDF17()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Seguridad Social Integral</h3>
+                            <p>Documentación y procedimientos para afiliación obligatoria a sistemas de seguridad social. Incluye afiliación a pensión, salud, riesgos laborales, registro en cajas de compensación familiar y cumplimiento de obligaciones patronales. Asegura cobertura completa de protección social del empleado.</p>
+                            <button class="btn" onclick="abrirPDF17()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2019/02/mediciones-05-1024x768.jpg" alt="Reglamento">
                         </div>
-                        <h3>Reglamento Interno De Trabajo</h3>
-                        <p>Normas y regulaciones que rigen las relaciones laborales en la organización. Define derechos y deberes de empleados, políticas de conducta, procedimientos disciplinarios, beneficios, horarios de trabajo y protocolos de seguridad e higiene ocupacional. Establece las reglas claras para una convivencia laboral armoniosa.</p>
-                        <button class="btn" onclick="abrirPDF18()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Reglamento Interno De Trabajo</h3>
+                            <p>Normas y regulaciones que rigen las relaciones laborales en la organización. Define derechos y deberes de empleados, políticas de conducta, procedimientos disciplinarios, beneficios, horarios de trabajo y protocolos de seguridad e higiene ocupacional. Establece las reglas claras para una convivencia laboral armoniosa.</p>
+                            <button class="btn" onclick="abrirPDF18()">Ver Documento</button>
+                        </div>
                     </div>
                 </div>
             </div>
