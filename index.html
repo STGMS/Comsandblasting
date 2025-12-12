@@ -394,8 +394,12 @@
             grid-template-columns: 1fr 2fr;
             gap: 60px;
             align-items: center;
-            margin-bottom: 0;
+            margin-bottom: 80px;
             animation: fadeInScale 0.8s ease-out;
+        }
+
+        .galeria-row:last-of-type {
+            margin-bottom: 0;
         }
 
         .galeria-image-container {
@@ -445,6 +449,40 @@
             line-height: 1.9;
             font-size: 1rem;
             font-weight: 500;
+        }
+
+        .galeria-compact-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .galeria-compact-item {
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        .galeria-compact-item .galeria-image-container {
+            margin-bottom: 30px;
+        }
+
+        .galeria-compact-item .galeria-image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .galeria-compact-item .galeria-content {
+            padding: 30px 25px;
+        }
+
+        .galeria-compact-item .galeria-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .galeria-compact-item .galeria-content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
         
         footer {
@@ -500,6 +538,11 @@
             .galeria-row {
                 grid-template-columns: 1fr;
             }
+
+            .galeria-compact-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -527,6 +570,19 @@
 
             .galeria-content h3 {
                 font-size: 1.5rem;
+            }
+
+            .galeria-compact-row {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .galeria-compact-item .galeria-content {
+                padding: 25px 20px;
+            }
+
+            .galeria-compact-item .galeria-content h3 {
+                font-size: 1.2rem;
             }
         }
 
@@ -639,13 +695,35 @@
                     </div>
                 </div>
 
-                <div class="galeria-row animate-on-scroll">
-                    <div class="galeria-image-container">
-                        <img src="img6.jpeg" alt="Mapa de Conceptos">
+                <div class="galeria-compact-row animate-on-scroll">
+                    <div class="galeria-compact-item">
+                        <div class="galeria-image-container">
+                            <img src="img6.jpeg" alt="Mapa de Procesos">
+                        </div>
+                        <div class="galeria-content">
+                            <h3>MAPA DE PROCESOS</h3>
+                            <p>El mapa de procesos es una representación gráfica que muestra cómo se organizan y se relacionan los procesos dentro de la empresa. Permite identificar los procesos estratégicos, operacionales y complementarios, facilitando la comprensión del funcionamiento general de la organización.</p>
+                        </div>
                     </div>
-                    <div class="galeria-content">
-                        <h3>MAPA DE PROCESOS</h3>
-                        <p>El mapa de procesos es una representación gráfica que muestra cómo se organizan y se relacionan los procesos dentro de la empresa. Permite identificar los procesos estratégicos, operacionales y complementarios, facilitando la comprensión del funcionamiento general de la organización.</p>
+
+                    <div class="galeria-compact-item">
+                        <div class="galeria-image-container">
+                            <img src="img6.jpeg" alt="Item 2">
+                        </div>
+                        <div class="galeria-content">
+                            <h3>ITEM 2</h3>
+                            <p>Descripción del segundo item con contenido relevante para la organización.</p>
+                        </div>
+                    </div>
+
+                    <div class="galeria-compact-item">
+                        <div class="galeria-image-container">
+                            <img src="img6.jpeg" alt="Item 3">
+                        </div>
+                        <div class="galeria-content">
+                            <h3>ITEM 3</h3>
+                            <p>Descripción del tercer item con contenido relevante para la organización.</p>
+                        </div>
                     </div>
                 </div>
             </div>
