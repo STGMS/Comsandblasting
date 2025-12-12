@@ -398,14 +398,28 @@
             animation: fadeInScale 0.8s ease-out;
         }
 
-        .galeria-row:last-of-type {
+        .galeria-row:last-child {
             margin-bottom: 0;
+        }
+
+        .galeria-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        .galeria-card {
+            display: flex;
+            flex-direction: column;
+            animation: fadeInScale 0.8s ease-out;
         }
 
         .galeria-image-container {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 20px;
         }
 
         .galeria-image-container img {
@@ -423,12 +437,13 @@
         }
 
         .galeria-content {
-            padding: 50px 40px;
+            padding: 30px 25px;
             background: white;
             border-radius: 20px;
             border-top: 6px solid #ff8c00;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            flex-grow: 1;
         }
 
         .galeria-content:hover {
@@ -438,52 +453,26 @@
 
         .galeria-content h3 {
             color: #ff8c00;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
             font-weight: 900;
             letter-spacing: 1px;
         }
 
         .galeria-content p {
             color: #555;
-            line-height: 1.9;
-            font-size: 1rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
             font-weight: 500;
         }
 
-        .galeria-compact-row {
+        .galeria-row-2col {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            width: 33.333%;
-            margin: 0 auto;
-        }
-
-        .galeria-compact-item {
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
             animation: fadeInScale 0.8s ease-out;
-        }
-
-        .galeria-compact-item .galeria-image-container {
-            margin-bottom: 0;
-        }
-
-        .galeria-compact-item .galeria-image-container img {
-            width: 100%;
-            height: auto;
-        }
-
-        .galeria-compact-item .galeria-content {
-            padding: 50px 40px;
-        }
-
-        .galeria-compact-item .galeria-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .galeria-compact-item .galeria-content p {
-            font-size: 1rem;
-            line-height: 1.9;
         }
         
         footer {
@@ -536,12 +525,12 @@
                 gap: 35px;
             }
 
-            .galeria-row {
+            .galeria-row-2col {
                 grid-template-columns: 1fr;
             }
 
-            .galeria-compact-row {
-                width: 50%;
+            .galeria-grid-3 {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -565,23 +554,15 @@
             }
 
             .galeria-content {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
 
             .galeria-content h3 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
-            .galeria-compact-row {
-                width: 100%;
-            }
-
-            .galeria-compact-item .galeria-content {
-                padding: 50px 40px;
-            }
-
-            .galeria-compact-item .galeria-content h3 {
-                font-size: 1.8rem;
+            .galeria-grid-3 {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -674,7 +655,7 @@
 
         <section class="galeria-section">
             <div class="container">
-                <div class="galeria-row animate-on-scroll">
+                <div class="galeria-row-2col animate-on-scroll">
                     <div class="galeria-image-container">
                         <img src="img7.jpeg" alt="Niveles Funcionales">
                     </div>
@@ -684,7 +665,7 @@
                     </div>
                 </div>
 
-                <div class="galeria-row animate-on-scroll">
+                <div class="galeria-row-2col animate-on-scroll">
                     <div class="galeria-content">
                         <h3>ORGANIGRAMA</h3>
                         <p>El organigrama es una representación gráfica de la estructura de la organización, donde se muestran las áreas, cargos y la relación jerárquica entre ellos. Permite visualizar de forma clara cómo se distribuyen las funciones, los niveles de autoridad y las líneas de comunicación dentro de la empresa.</p>
@@ -694,34 +675,32 @@
                     </div>
                 </div>
 
-                <div class="galeria-compact-row animate-on-scroll">
-                    <div class="galeria-compact-item">
+                <div class="galeria-grid-3 animate-on-scroll">
+                    <div class="galeria-card">
                         <div class="galeria-image-container">
                             <img src="img6.jpeg" alt="Mapa de Procesos">
                         </div>
                         <div class="galeria-content">
                             <h3>MAPA DE PROCESOS</h3>
-                            <p>El mapa de procesos es una representación gráfica que muestra cómo se organizan y se relacionan los procesos dentro de la empresa. Permite identificar los procesos estratégicos, operacionales y complementarios, facilitando la comprensión del funcionamiento general de la organización.</p>
+                            <p>El mapa de procesos es una representación gráfica que muestra cómo se organizan y se relacionan los procesos dentro de la empresa.</p>
                         </div>
                     </div>
-
-                    <div class="galeria-compact-item">
+                    <div class="galeria-card">
                         <div class="galeria-image-container">
-                            <img src="img6.jpeg" alt="Item 2">
+                            <img src="img6.jpeg" alt="Segundo Proceso">
                         </div>
                         <div class="galeria-content">
-                            <h3>ITEM 2</h3>
-                            <p>Descripción del segundo item con contenido relevante para la organización.</p>
+                            <h3>SEGUNDO PROCESO</h3>
+                            <p>Descripción del segundo proceso dentro de la empresa para una mejor organización y distribución de tareas operacionales.</p>
                         </div>
                     </div>
-
-                    <div class="galeria-compact-item">
+                    <div class="galeria-card">
                         <div class="galeria-image-container">
-                            <img src="img6.jpeg" alt="Item 3">
+                            <img src="img6.jpeg" alt="Tercer Proceso">
                         </div>
                         <div class="galeria-content">
-                            <h3>ITEM 3</h3>
-                            <p>Descripción del tercer item con contenido relevante para la organización.</p>
+                            <h3>TERCER PROCESO</h3>
+                            <p>Descripción del tercer proceso complementario que facilita la comprensión del funcionamiento general de la organización.</p>
                         </div>
                     </div>
                 </div>
