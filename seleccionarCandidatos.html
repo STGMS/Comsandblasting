@@ -140,23 +140,23 @@
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 60px;
             margin-bottom: 60px;
         }
 
         .servicio-box {
             background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 40px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border-top: 6px solid #ff8c00;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
             animation: slideUp 0.8s ease-out;
         }
 
@@ -167,14 +167,14 @@
 
         .servicio-icon {
             width: 100%;
-            height: 220px;
-            margin: 0 auto 25px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
             background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
             overflow: hidden;
+            order: -1;
         }
 
         .servicio-icon img {
@@ -189,19 +189,27 @@
             transform: scale(1.08);
         }
 
+        .servicio-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
         .servicio-box h3 {
             color: #ff8c00;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
             font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .servicio-box p {
             color: #555;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             flex-grow: 1;
-            line-height: 1.8;
-            font-size: 0.95rem;
+            line-height: 1.9;
+            font-size: 1rem;
             font-weight: 500;
         }
 
@@ -219,6 +227,8 @@
             font-weight: 800;
             text-align: center;
             box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+            width: fit-content;
+            margin-top: 10px;
         }
 
         .btn:hover {
@@ -229,11 +239,6 @@
         .btn:disabled {
             background: #ccc;
             cursor: not-allowed;
-        }
-
-        .btn + .btn {
-            margin-top: 8px;
-            display: block;
         }
 
         @keyframes slideUp {
@@ -273,6 +278,14 @@
             }
             
             .servicio-box {
+                grid-template-columns: 1fr;
+            }
+
+            .servicio-icon {
+                height: 250px;
+            }
+
+            .servicio-content {
                 padding: 30px 20px;
             }
         }
@@ -337,46 +350,56 @@
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/GasOil2.jpg" alt="Entrevista por Competencias">
                         </div>
-                        <h3>Formato De Entrevista Por Competencias</h3>
-                        <p>Formato de entrevista formal para evaluación profunda de candidatos seleccionados. Incluye preguntas conductuales para evaluar competencias clave, ejemplos de situaciones previas, capacidad de resolución de problemas y alineación con valores organizacionales. Proporciona evaluación estructurada y comparable.</p>
-                        <button class="btn" onclick="abrirPDF8()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Formato De Entrevista Por Competencias</h3>
+                            <p>Formato de entrevista formal para evaluación profunda de candidatos seleccionados. Incluye preguntas conductuales para evaluar competencias clave, ejemplos de situaciones previas, capacidad de resolución de problemas y alineación con valores organizacionales. Proporciona evaluación estructurada y comparable.</p>
+                            <button class="btn" onclick="abrirPDF8()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tanques1.jpg" alt="Pruebas Psicotécnicas">
                         </div>
-                        <h3>Pruebas Psicotécnicas</h3>
-                        <p>Evaluaciones psicológicas y técnicas para medir aptitudes, personalidad y competencias cognitivas. Incluye tests de personalidad, razonamiento lógico, pruebas técnicas específicas del cargo y valoración de estabilidad emocional para garantizar idoneidad del candidato en el puesto.</p>
-                        <button class="btn" onclick="window.location.href='pruebasPsicotecnicas.html'">Ver Más</button>
+                        <div class="servicio-content">
+                            <h3>Pruebas Psicotécnicas</h3>
+                            <p>Evaluaciones psicológicas y técnicas para medir aptitudes, personalidad y competencias cognitivas. Incluye tests de personalidad, razonamiento lógico, pruebas técnicas específicas del cargo y valoración de estabilidad emocional para garantizar idoneidad del candidato en el puesto.</p>
+                            <button class="btn" onclick="window.location.href='pruebasPsicotecnicas.html'">Ver Más</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Electro1.jpg" alt="Decisión De La Selección">
                         </div>
-                        <h3>Decisión De La Selección</h3>
-                        <p>Documento de resolución final y resultado del proceso de selección. Consolida la evaluación de todos los candidatos finalistas, documentación de puntajes, criterios de decisión, recomendación de candidato ganador y comunicación de resultados a todos los participantes del proceso.</p>
-                        <button class="btn" onclick="abrirPDF9()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Decisión De La Selección</h3>
+                            <p>Documento de resolución final y resultado del proceso de selección. Consolida la evaluación de todos los candidatos finalistas, documentación de puntajes, criterios de decisión, recomendación de candidato ganador y comunicación de resultados a todos los participantes del proceso.</p>
+                            <button class="btn" onclick="abrirPDF9()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tanques2.jpg" alt="Visita Domiciliaria">
                         </div>
-                        <h3>Visita Domiciliaria</h3>
-                        <p>Protocolo de verificación en ambiente del candidato para evaluar referencias sociales. Valida información proporcionada, verifica referencias personales, evalúa conducta comunitaria y proporciona datos adicionales para decisión final de contratación. Asegura confiabilidad del candidato.</p>
-                        <button class="btn" onclick="abrirPDF14()">Solicitud De Visita Domiciliaria</button>
-                        <button class="btn" onclick="abrirPDF19()">Formato De Visita Domiciliaria</button>
+                        <div class="servicio-content">
+                            <h3>Visita Domiciliaria</h3>
+                            <p>Protocolo de verificación en ambiente del candidato para evaluar referencias sociales. Valida información proporcionada, verifica referencias personales, evalúa conducta comunitaria y proporciona datos adicionales para decisión final de contratación. Asegura confiabilidad del candidato.</p>
+                            <button class="btn" onclick="abrirPDF14()">Solicitud De Visita Domiciliaria</button>
+                            <button class="btn" onclick="abrirPDF19()">Formato De Visita Domiciliaria</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/46d35ccfc12e4380693d1ac39f9759da/4-ok.jpg" alt="Exámenes Médicos">
                         </div>
-                        <h3>Exámenes Médicos</h3>
-                        <p>Evaluación médica ocupacional para verificar aptitud física y de salud. Incluye examen médico general, pruebas específicas según ocupación, análisis de capacidades físicas requeridas y generación de certificado de aptitud laboral. Garantiza que el candidato puede desempeñar el puesto.</p>
-                        <button class="btn" onclick="abrirPDF15()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Exámenes Médicos</h3>
+                            <p>Evaluación médica ocupacional para verificar aptitud física y de salud. Incluye examen médico general, pruebas específicas según ocupación, análisis de capacidades físicas requeridas y generación de certificado de aptitud laboral. Garantiza que el candidato puede desempeñar el puesto.</p>
+                            <button class="btn" onclick="abrirPDF15()">Ver Documento</button>
+                        </div>
                     </div>
                 </div>
             </div>
