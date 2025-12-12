@@ -142,23 +142,23 @@
 
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 60px;
             margin-bottom: 60px;
         }
 
         .servicio-box {
             background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-            padding: 40px 30px;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
             border-top: 6px solid #ff8c00;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
             animation: slideUp 0.8s ease-out;
         }
 
@@ -169,14 +169,14 @@
 
         .servicio-icon {
             width: 100%;
-            height: 220px;
-            margin: 0 auto 25px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
             background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
             overflow: hidden;
+            order: -1;
         }
 
         .servicio-icon img {
@@ -191,19 +191,27 @@
             transform: scale(1.08);
         }
 
+        .servicio-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
         .servicio-box h3 {
             color: #ff8c00;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
             font-weight: 900;
+            letter-spacing: 1px;
         }
 
         .servicio-box p {
             color: #555;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             flex-grow: 1;
-            line-height: 1.8;
-            font-size: 0.95rem;
+            line-height: 1.9;
+            font-size: 1rem;
             font-weight: 500;
         }
 
@@ -221,6 +229,8 @@
             font-weight: 800;
             text-align: center;
             box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+            width: fit-content;
+            margin-top: 10px;
         }
 
         .btn:hover {
@@ -231,11 +241,6 @@
         .btn:disabled {
             background: #ccc;
             cursor: not-allowed;
-        }
-
-        .btn + .btn {
-            margin-top: 8px;
-            display: block;
         }
 
         @keyframes slideUp {
@@ -275,6 +280,14 @@
             }
             
             .servicio-box {
+                grid-template-columns: 1fr;
+            }
+
+            .servicio-icon {
+                height: 250px;
+            }
+
+            .servicio-content {
                 padding: 30px 20px;
             }
         }
@@ -339,54 +352,66 @@
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Estructuras4.jpg" alt="Requisición De Personal">
                         </div>
-                        <h3>Requisición De Personal</h3>
-                        <p>Formato de solicitud oficial para la necesidad de personal en la organización. Documenta el departamento solicitante, justificación de la necesidad, características del cargo, cantidad de vacantes y plazo de cobertura requerido para iniciar el proceso de selección. Este documento es fundamental para autorizar el inicio del reclutamiento.</p>
-                        <button class="btn" onclick="abrirPDF4()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Requisición De Personal</h3>
+                            <p>Formato de solicitud oficial para la necesidad de personal en la organización. Documenta el departamento solicitante, justificación de la necesidad, características del cargo, cantidad de vacantes y plazo de cobertura requerido para iniciar el proceso de selección. Este documento es fundamental para autorizar el inicio del reclutamiento.</p>
+                            <button class="btn" onclick="abrirPDF4()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tuberia4.jpg" alt="Lista Verificación Perfil">
                         </div>
-                        <h3>Lista Verificación Perfil De Cargo</h3>
-                        <p>Checklist para verificar que los candidatos cumplan con el perfil requerido. Facilita la evaluación objetiva de requisitos mínimos como educación, experiencia, competencias técnicas y especializaciones necesarias para avanzar en el proceso de selección.</p>
-                        <button class="btn" onclick="abrirPDF6()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Lista Verificación Perfil De Cargo</h3>
+                            <p>Checklist para verificar que los candidatos cumplan con el perfil requerido. Facilita la evaluación objetiva de requisitos mínimos como educación, experiencia, competencias técnicas y especializaciones necesarias para avanzar en el proceso de selección.</p>
+                            <button class="btn" onclick="abrirPDF6()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/ecbec7ea23a315b2beaaa7bd54e70571/3-ok.jpg" alt="Reclutamiento Interno">
                         </div>
-                        <h3>Reclutamiento Interno</h3>
-                        <p>Protocolo para identificar y promover talento disponible dentro de la organización. Establece los procesos, criterios y beneficios para que empleados actuales puedan optar por nuevas posiciones, fomentando el desarrollo profesional interno y la retención del talento existente.</p>
-                        <button class="btn" onclick="abrirPDF11()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Reclutamiento Interno</h3>
+                            <p>Protocolo para identificar y promover talento disponible dentro de la organización. Establece los procesos, criterios y beneficios para que empleados actuales puedan optar por nuevas posiciones, fomentando el desarrollo profesional interno y la retención del talento existente.</p>
+                            <button class="btn" onclick="abrirPDF11()">Ver Documento</button>
+                        </div>
                     </div>
 
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/3276bb2fe3eb4e904119fa18f8891ef6/5-ok.jpg" alt="Reclutamiento Externo">
                         </div>
-                        <h3>Reclutamiento Externo</h3>
-                        <p>Estrategia para atraer candidatos calificados del mercado laboral externo. Define canales de difusión, plataformas de publicación, criterios de publicidad de vacantes y metodologías para alcanzar el mayor número de candidatos potencialmente idóneos disponibles en el mercado.</p>
-                        <button class="btn" onclick="abrirPDF12()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Reclutamiento Externo</h3>
+                            <p>Estrategia para atraer candidatos calificados del mercado laboral externo. Define canales de difusión, plataformas de publicación, criterios de publicidad de vacantes y metodologías para alcanzar el mayor número de candidatos potencialmente idóneos disponibles en el mercado.</p>
+                            <button class="btn" onclick="abrirPDF12()">Ver Documento</button>
+                        </div>
                     </div>
                     
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Tanques3.jpg" alt="Recepción De Hojas De Vida">
                         </div>
-                        <h3>Recepción De Hojas De Vida</h3>
-                        <p>Procedimiento y formatos para la recopilación de documentación de candidatos. Establece los requisitos de documentación, criterios de aceptación, fechas de cierre de convocatoria y mecanismos de organización de candidatos inscritos en el proceso de selección. Garantiza orden y trazabilidad en la gestión de aplicantes.</p>
-                        <button class="btn" onclick="abrirPDF5()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Recepción De Hojas De Vida</h3>
+                            <p>Procedimiento y formatos para la recopilación de documentación de candidatos. Establece los requisitos de documentación, criterios de aceptación, fechas de cierre de convocatoria y mecanismos de organización de candidatos inscritos en el proceso de selección. Garantiza orden y trazabilidad en la gestión de aplicantes.</p>
+                            <button class="btn" onclick="abrirPDF5()">Ver Documento</button>
+                        </div>
                     </div>
                     
                     <div class="servicio-box">
                         <div class="servicio-icon">
                             <img src="https://comsandblasting.com/wp-content/uploads/2022/06/Vehiculos3.jpg" alt="Entrevista Preliminar">
                         </div>
-                        <h3>Entrevista Preliminar</h3>
-                        <p>Guía y formato para la primera entrevista de filtrado de candidatos. Proporciona preguntas estructuradas para evaluación inicial, valoración de motivación, disponibilidad, expectativas salariales y compatibilidad con la cultura organizacional. Permite descartar candidatos no alineados con requisitos básicos.</p>
-                        <button class="btn" onclick="abrirPDF7()">Ver Documento</button>
+                        <div class="servicio-content">
+                            <h3>Entrevista Preliminar</h3>
+                            <p>Guía y formato para la primera entrevista de filtrado de candidatos. Proporciona preguntas estructuradas para evaluación inicial, valoración de motivación, disponibilidad, expectativas salariales y compatibilidad con la cultura organizacional. Permite descartar candidatos no alineados con requisitos básicos.</p>
+                            <button class="btn" onclick="abrirPDF7()">Ver Documento</button>
+                        </div>
                     </div>
                 </div>
             </div>
