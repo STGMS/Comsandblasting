@@ -179,7 +179,6 @@
             z-index: 1;
             font-weight: 900;
             letter-spacing: 2px;
-            -webkit-text-stroke: 1px rgba(255, 140, 0, 0.15);
             line-height: 1.2;
         }
         
@@ -193,16 +192,6 @@
             max-width: 900px;
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
             letter-spacing: 1px;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            animation: slideUp 1s ease-out 0.4s both;
-            position: relative;
-            z-index: 1;
-            flex-wrap: wrap;
         }
         
         @keyframes slideDownTitle {
@@ -266,173 +255,8 @@
             }
         }
         
-        @keyframes pulseGlow {
-            0%, 100% {
-                box-shadow: 0 15px 45px rgba(0,0,0,0.12);
-            }
-            50% {
-                box-shadow: 0 15px 60px rgba(255, 140, 0, 0.2);
-            }
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, #ff8c00 0%, #e67e00 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 2px solid transparent;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 800;
-            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 1px;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn:hover {
-            transform: translateY(-6px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(255, 140, 0, 0.65);
-            text-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #ff8c00;
-            border-color: white;
-            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.5);
-        }
-        
-        .servicios {
-            padding: 120px 20px;
-            background: linear-gradient(180deg, #fafafa 0%, #ffffff 50%, #f5f5f5 100%);
-        }
-        
-        .servicios h2 {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 100px;
-            color: #2c3e50;
-            font-weight: 900;
-            position: relative;
-            padding-bottom: 30px;
-            letter-spacing: 1px;
-        }
-        
-        .servicios h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(90deg, #ff8c00, #e67e00);
-            border-radius: 3px;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
-        }
-        
-        .servicios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
-        }
-        
-        .servicio-card {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            text-align: center;
-            border-top: 6px solid #ff8c00;
-            animation: fadeInScale 0.8s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .servicio-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 140, 0, 0.08) 0%, transparent 100%);
-            pointer-events: none;
-        }
-        
-        .servicio-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.1), transparent);
-            transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .servicio-card:hover {
-            transform: translateY(-20px) scale(1.03);
-            box-shadow: 0 40px 100px rgba(255, 140, 0, 0.3);
-            border-top: 6px solid #ff8c00;
-        }
-        
-        .servicio-card:hover::after {
-            left: 100%;
-        }
-        
-        .servicio-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            animation: floatAnimation 3.5s ease-in-out infinite;
-            display: inline-block;
-        }
-        
-        .servicio-card h3 {
-            color: #ff8c00;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-        
-        .servicio-card p {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-            line-height: 1.9;
-            font-weight: 500;
-        }
-        
         .galeria {
-            padding: 140px 20px;
+            padding: 100px 20px;
             background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
             position: relative;
         }
@@ -477,34 +301,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
         }
-
-        .galeria-grid.single-image {
-            grid-template-columns: 1fr;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .galeria-grid.single-image img {
-            width: 90%;
-            max-width: 900px;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            animation: floatAnimation 4.5s ease-in-out infinite;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .galeria-grid.single-image img:hover {
-            box-shadow: 0 40px 120px rgba(255, 140, 0, 0.5);
-            transform: translateY(-30px) scale(1.08);
-        }
-
-        @media (max-width: 768px) {
-            .galeria-grid.single-image img {
-                width: 95%;
-            }
-        }
         
         .galeria-item {
             position: relative;
@@ -537,6 +333,7 @@
         .galeria-item img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
         }
         
         .galeria-item:hover img {
@@ -573,6 +370,81 @@
             display: block;
             width: 100%;
             height: 100%;
+        }
+        
+        .galeria-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+            position: relative;
+        }
+
+        .galeria-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.4);
+        }
+
+        .galeria-row {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 0;
+            animation: fadeInScale 0.8s ease-out;
+        }
+
+        .galeria-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .galeria-image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: floatAnimation 4.5s ease-in-out infinite;
+        }
+
+        .galeria-image-container img:hover {
+            box-shadow: 0 40px 120px rgba(255, 140, 0, 0.5);
+            transform: translateY(-20px) scale(1.08);
+        }
+
+        .galeria-content {
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            border-top: 6px solid #ff8c00;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .galeria-content:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 80px rgba(255, 140, 0, 0.25);
+        }
+
+        .galeria-content h3 {
+            color: #ff8c00;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .galeria-content p {
+            color: #555;
+            line-height: 1.9;
+            font-size: 1rem;
+            font-weight: 500;
         }
         
         footer {
@@ -620,10 +492,13 @@
         }
         
         @media (max-width: 1024px) {
-            .galeria-grid,
-            .servicios-grid {
+            .galeria-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 35px;
+            }
+
+            .galeria-row {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -642,30 +517,19 @@
                 font-size: 1.3rem;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
             .logo img {
                 height: 40px;
             }
-            
-            .servicios h2,
-            .galeria h2 {
-                font-size: 2.2rem;
+
+            .galeria-content {
+                padding: 30px 20px;
             }
-            
-            .servicio-card {
-                padding: 40px 30px;
-            }
-            
-            .btn {
-                padding: 15px 35px;
-                font-size: 1rem;
+
+            .galeria-content h3 {
+                font-size: 1.5rem;
             }
         }
+
         .dropdown-menu {
             display: none; 
             position: absolute; 
@@ -718,32 +582,32 @@
         <section class="galeria">
             <div class="container">
                 <h2 class="animate-on-scroll">Acerca De Nosotros</h2>
-                <div class="galeria-grid">
-                    <div class="galeria-item animate-on-scroll">
+                <div class="galeria-grid animate-on-scroll">
+                    <div class="galeria-item">
                         <a href="resenna.html">
                             <img src="https://comsandblasting.com/wp-content/uploads/2019/02/equipos_Artboard-8.jpg" alt="Reseña Historica">
                             <div class="galeria-overlay">Reseña Histórica</div>
                         </a>
                     </div>
-                    <div class="galeria-item animate-on-scroll">
+                    <div class="galeria-item">
                         <a href="mision.html">
                             <img src="img1.jpeg" alt="Misión">
                             <div class="galeria-overlay">Misión</div>
                         </a>
                     </div>
-                    <div class="galeria-item animate-on-scroll">
+                    <div class="galeria-item">
                         <a href="vision.html">
                             <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/474fd087b293330b494a648ade8034d9/2-ok.jpg" alt="Visión">
                             <div class="galeria-overlay">Visión</div>
                         </a>
                     </div>
-                    <div class="galeria-item animate-on-scroll">
+                    <div class="galeria-item">
                         <a href="valores.html">
                             <img src="https://comsandblasting.com/wp-content/uploads/2015/09/Home-nosotros3.jpg" alt="Valores">
                             <div class="galeria-overlay">Valores</div>
                         </a>
                     </div>
-                    <div class="galeria-item animate-on-scroll">
+                    <div class="galeria-item">
                         <a href="principios.html">
                             <img src="https://comsandblasting.com/wp-content/uploads/slider/cache/4408afdc1c12a3e881d1c4227cdd64f5/6-ok.jpg" alt="Principios">
                             <div class="galeria-overlay">Principios</div>
@@ -753,66 +617,35 @@
             </div>
         </section>
 
-        <section class="galeria">
-            <div class="container">
-                <div class="galeria-grid single-image animate-on-scroll">
-                    <img src="img7.jpeg" alt="Imagen destacada 3">
-                </div>
-            </div>
-        </section>
-        
-        <section class="galeria">
-            <div class="container">
-                <div class="galeria-grid single-image animate-on-scroll">
-                    <img src="img.jpeg" alt="Imagen destacada 1">
-                </div>
-            </div>
-        </section>
-
-        <section class="galeria">
-            <div class="container">
-                <div class="galeria-grid single-image animate-on-scroll">
-                    <img src="img6.jpeg" alt="Imagen destacada 2">
-                </div>
-            </div>
-        </section>
-
         <section class="galeria-section">
             <div class="container">
-                <div class="galeria-grid">
-                    <div class="galeria-item">
-                        <img src="img7.jpeg">
-                        <div class="galeria-overlay"></div>
+                <div class="galeria-row animate-on-scroll">
+                    <div class="galeria-image-container">
+                        <img src="img7.jpeg" alt="Niveles Funcionales">
                     </div>
-                    <div class="contenido-texto">
+                    <div class="galeria-content">
                         <h3>LOS NIVELES FUNCIONALES</h3>
-                        <p>Los niveles   funcionales contribuyen a la jerarquía estructural de una organización que determinan los grados de autoridad, responsabilidad y tareas
-Estos de niveles son:
-Estratégicos: son los encargados de las políticas y decisiones de la organización 
-Táctico: coordinan las actividades que se deben desarrollar en la organización 
-Operativo: realizar eficazmente las tareas de la organización.</p>
+                        <p>Los niveles funcionales contribuyen a la jerarquía estructural de una organización que determinan los grados de autoridad, responsabilidad y tareas. Estos niveles son: Estratégicos (encargados de políticas y decisiones), Táctico (coordinan actividades) y Operativo (realizan tareas de la organización).</p>
                     </div>
                 </div>
 
-                <div class="galeria-grid reverse">
-                    <div class="contenido-texto">
+                <div class="galeria-row animate-on-scroll">
+                    <div class="galeria-content">
                         <h3>ORGANIGRAMA</h3>
                         <p>El organigrama es una representación gráfica de la estructura de la organización, donde se muestran las áreas, cargos y la relación jerárquica entre ellos. Permite visualizar de forma clara cómo se distribuyen las funciones, los niveles de autoridad y las líneas de comunicación dentro de la empresa.</p>
                     </div>
-                    <div class="galeria-item">
-                        <img src="img.jpeg" alt="El Renacer">
-                        <div class="galeria-overlay"></div>
+                    <div class="galeria-image-container">
+                        <img src="img.jpeg" alt="Organigrama">
                     </div>
                 </div>
 
-                <div class="galeria-grid">
-                    <div class="galeria-item">
-                        <img src="img6.jpeg" alt="Expansión">
-                        <div class="galeria-overlay"></div>
+                <div class="galeria-row animate-on-scroll">
+                    <div class="galeria-image-container">
+                        <img src="img6.jpeg" alt="Mapa de Conceptos">
                     </div>
-                    <div class="contenido-texto">
-                        <h3>MAPA DE CONCEPTOS</h3>
-                        <p>El mapa de procesos es una representación gráfica que muestra cómo se organizan y se relacionan los procesos dentro de la empresa. Permite identificar los procesos estratégicos, operacionales y complementarios, facilitando la comprensión del funcionamiento general de la organización y evidenciando cómo cada proceso aporta al logro de los objetivos.</p>
+                    <div class="galeria-content">
+                        <h3>MAPA DE PROCESOS</h3>
+                        <p>El mapa de procesos es una representación gráfica que muestra cómo se organizan y se relacionan los procesos dentro de la empresa. Permite identificar los procesos estratégicos, operacionales y complementarios, facilitando la comprensión del funcionamiento general de la organización.</p>
                     </div>
                 </div>
             </div>
@@ -838,7 +671,6 @@ Operativo: realizar eficazmente las tareas de la organización.</p>
             }
         });
         
-        // Intersection Observer para animaciones al entrar en pantalla
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -854,29 +686,9 @@ Operativo: realizar eficazmente las tareas de la organización.</p>
             });
         }, observerOptions);
         
-        // Observar todos los elementos con la clase animate-on-scroll
         document.querySelectorAll('.animate-on-scroll').forEach(element => {
             observer.observe(element);
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
