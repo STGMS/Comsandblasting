@@ -321,6 +321,39 @@
                 font-size: 1.6rem;
             }
         }
+
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff8c00 0%, #e67e00 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 140, 0, 0.65);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn + .btn {
+            margin-top: 8px;
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -374,6 +407,8 @@
                     </ul>
 
                     <p style="margin-top: 25px;"><strong style="color: #ff8c00;">Importancia en el Proceso de Selección:</strong> Un buen desempeño en estas pruebas sugiere que el candidato reúne los requisitos técnicos y de aptitud para ejecutarse eficazmente en el puesto. Deficiencias en la prueba pueden alertar sobre posibles necesidades de formación adicional o incluso reconsideración de su idoneidad para la posición.</p>
+                    <button class="btn" onclick="abrirPDF1()">Administrativa</button>
+                    <button class="btn" onclick="abrirPDF2()">Operativa</button>
                 </div>
             </div>
         </section>
@@ -409,6 +444,26 @@
 
             alert(detalles[tipo]);
         }
+
+
+
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        function abrirPDF1() {
+            window.open("https://drive.google.com/file/d/1rOlcGc75iIv7N73lpvos4W8yyDs2gS5A/view?usp=sharing", '_blank');
+        }
+        function abrirPDF2() {
+            window.open("https://drive.google.com/file/d/1efCSbmL9GOsTCbeYDM9puZOdclhKgqol/view?usp=sharing");
+        }
+        
     </script>
 </body>
 </html>
